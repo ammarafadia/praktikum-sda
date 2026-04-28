@@ -44,17 +44,21 @@ BukuNode* tambahBuku(BukuNode* head, string judul) {
  * 4. Lanjutkan ke node berikutnya. Berhenti jika temp kembali mencapai head.
  * 5. Jika seluruh list sudah ditelusuri dan tidak ditemukan, kembalikan false.
  */
+
 bool cariBuku(BukuNode* head, string judulDicari) {
-if (head == nullptr) {
+// Jika list kosong
+    if (head == nullptr) {
         return false;
     }
     BukuNode* temp = head;
     do {
+        // Cek apakah judul sama
         if (temp->judulBuku == judulDicari) {
             return true;
         }
         temp = temp->next;
-    } while (temp != head);
+    } while (temp != head); // Berhenti jika kembali ke head
+    // Jika tidak ditemukan
     return false;
 }
 
